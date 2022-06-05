@@ -10,7 +10,7 @@ router.post('/post', [
     body('body').isLength({min: 5}).withMessage('body tidak sesuai')],
     blogController.createBlogPost);
 
-router.get('/posts?page=1&perPage=5', blogController.getAllBlogPost);
+router.get('/posts', blogController.getAllBlogPost);
 router.get('/post/:postId', blogController.getBlogPostById)
 router.put('/post/:postId', [
     body('title').isLength({min: 5}).withMessage('title tidak sesuai'),
